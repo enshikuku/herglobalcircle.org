@@ -129,8 +129,9 @@ export default function EnterprisePage() {
             Tell us what you are building and where experienced support could
             make the difference.
           </p>
-          <Link
-            href="/contact"
+        <Link
+          href="/contact"
+          prefetch={false}
             className="focus-ring mt-8 inline-flex rounded-full bg-gold px-8 py-4 font-bold text-forest transition hover:bg-white"
           >
             Discuss Your Needs
