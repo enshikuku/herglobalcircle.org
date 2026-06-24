@@ -42,6 +42,7 @@ export function DonationReceived({ category }: DonationReceivedProps) {
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
             href="/"
+            prefetch={false}
             className="focus-ring inline-flex items-center rounded-full bg-teal px-7 py-4 font-bold text-white transition hover:bg-teal-700"
           >
             <Heart className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -49,6 +50,7 @@ export function DonationReceived({ category }: DonationReceivedProps) {
           </Link>
           <Link
             href="/contact"
+            prefetch={false}
             className="focus-ring rounded-full border border-forest/20 bg-white px-7 py-4 font-bold text-forest transition hover:border-forest"
           >
             Contact Us
