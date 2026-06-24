@@ -19,6 +19,7 @@ export function SiteFooter() {
           <div>
             <Link
               href="/"
+              prefetch={false}
               className="focus-ring inline-flex items-center gap-4 rounded-full"
               aria-label="H.E.R Global Circle home"
             >
@@ -52,6 +53,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    prefetch={false}
                     className="focus-ring rounded-sm text-sm text-cream/75 transition hover:text-white"
                   >
                     {link.label}
@@ -88,6 +90,7 @@ export function SiteFooter() {
             </a>
             <Link
               href="/donate"
+              prefetch={false}
               className="focus-ring mt-7 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest transition hover:bg-white"
             >
               Support Our Work
