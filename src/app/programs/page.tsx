@@ -162,6 +162,7 @@ export default function ProgramsPage() {
           </p>
           <Link
             href="/contact"
+            prefetch={false}
             className="focus-ring mt-9 inline-flex rounded-full bg-white px-8 py-4 font-bold text-teal transition hover:bg-gold hover:text-forest"
           >
             Join the Circle
