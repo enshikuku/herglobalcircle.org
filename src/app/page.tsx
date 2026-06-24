@@ -4,7 +4,9 @@ import Link from "next/link";
 import { ArrowRight, Globe2, Heart, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "H.E.R Global Circle",
+  },
   alternates: { canonical: "/" },
 };
 
@@ -56,6 +58,7 @@ export default function HomePage() {
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/donate"
+                prefetch={false}
                 className="focus-ring inline-flex items-center rounded-full bg-teal px-7 py-4 font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-teal-700"
               >
                 <Heart className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -63,12 +66,14 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/contact"
+                prefetch={false}
                 className="focus-ring inline-flex items-center rounded-full border border-forest/15 bg-white px-7 py-4 font-bold text-forest transition hover:border-forest hover:bg-forest hover:text-white"
               >
                 Partner With Us
               </Link>
               <Link
                 href="/programs"
+                prefetch={false}
                 className="focus-ring inline-flex items-center rounded-full px-5 py-4 font-bold text-forest transition hover:text-teal"
               >
                 Explore Our Work
@@ -174,6 +179,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/about"
+              prefetch={false}
               className="focus-ring inline-flex items-center rounded-full text-sm font-bold uppercase tracking-[0.15em] text-teal transition hover:text-forest"
             >
               Read our full story
@@ -206,12 +212,14 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
+                prefetch={false}
                 className="focus-ring rounded-full bg-forest px-7 py-4 font-bold text-white transition hover:bg-teal"
               >
                 Start a Conversation
               </Link>
               <Link
                 href="/impact"
+                prefetch={false}
                 className="focus-ring rounded-full border border-forest/20 px-7 py-4 font-bold text-forest transition hover:border-forest"
               >
                 See Our Vision
