@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Tangerine";
+  src: url("/branding/fonts/Tangerine/Tangerine_Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tangerine";
+  src: url("/branding/fonts/Tangerine/Tangerine_Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("/branding/fonts/Glacial_Indifference/GlacialIndifference-Regular.otf")
+    format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("/branding/fonts/Glacial_Indifference/GlacialIndifference-Bold.otf")
+    format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --font-tangerine: "Tangerine";
+  --font-glacial: "Glacial Indifference";
+  --teal: #008080;
+  --forest: #0d492b;
+  --blush: #fadbd8;
+  --gold: #c38820;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #fffaf7;
+  color: #171916;
+  font-family: var(--font-glacial), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: var(--gold);
+  outline-offset: 3px;
+}
+
+.texture-paper {
+  background-color: #fffaf7;
+  background-image:
+    linear-gradient(rgba(255, 250, 247, 0.94), rgba(255, 250, 247, 0.94)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+}
+
+.pattern-weave {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(195, 136, 32, 0.12) 0 1px,
+      transparent 1px 15px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 128, 128, 0.1) 0 1px,
+      transparent 1px 15px
+    );
+}
+
+.display-script {
+  font-family: var(--font-tangerine), cursive;
+  font-weight: 700;
+}
+
+.section-kicker {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold;
+}
+
+::selection {
+  background: rgba(195, 136, 32, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
