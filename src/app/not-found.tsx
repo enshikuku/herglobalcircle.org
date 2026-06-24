@@ -11,6 +11,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
+          prefetch={false}
           className="focus-ring mt-8 inline-flex rounded-full bg-teal px-7 py-4 font-bold text-white transition hover:bg-teal-700"
         >
           Return Home
