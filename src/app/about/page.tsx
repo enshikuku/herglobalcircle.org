@@ -133,6 +133,7 @@ export default function AboutPage() {
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
               href="/programs"
+              prefetch={false}
               className="focus-ring inline-flex items-center rounded-full bg-gold px-7 py-4 font-bold text-forest transition hover:bg-white"
             >
               Explore the H.E.R Pillars
@@ -140,6 +141,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/impact"
+              prefetch={false}
               className="focus-ring rounded-full border border-white/25 px-7 py-4 font-bold text-white transition hover:bg-white/10"
             >
               View Our Impact Goals
