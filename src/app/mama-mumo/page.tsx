@@ -106,6 +106,7 @@ export default function MamaMumoPage() {
           </h2>
           <Link
             href="/donate"
+            prefetch={false}
             className="focus-ring mt-9 inline-flex rounded-full bg-blush px-8 py-4 font-bold text-forest transition hover:bg-white"
           >
             Support Mama Mumo Initiative
