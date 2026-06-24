@@ -39,13 +39,14 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition ${
         scrolled || menuOpen
-          ? "border-forest/10 bg-paper/95 shadow-sm backdrop-blur"
+          ? "border-forest/10 bg-paper/95 shadow-sm"
           : "border-transparent bg-paper/90"
-      }`}
+      } ${scrolled && !menuOpen ? "backdrop-blur" : ""}`}
     >
       <div className="mx-auto flex h-[5.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
+          prefetch={false}
           className="focus-ring relative z-50 flex items-center gap-3 rounded-full"
           aria-label="H.E.R Global Circle home"
         >
@@ -77,6 +78,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={false}
                 className={`focus-ring rounded-md py-2 text-sm transition-colors ${
                   active
                     ? "font-bold text-teal"
@@ -89,6 +91,7 @@ export function SiteHeader() {
           })}
           <Link
             href="/donate"
+            prefetch={false}
             className="focus-ring inline-flex items-center rounded-full bg-teal px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-teal-700"
           >
             <Heart className="mr-2 h-4 w-4" aria-hidden="true" />
@@ -129,6 +132,7 @@ export function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={false}
                   onClick={() => setMenuOpen(false)}
                   className={`border-b border-forest/10 py-4 text-2xl ${
                     active ? "font-bold text-teal" : "text-forest"
@@ -141,6 +145,7 @@ export function SiteHeader() {
           </div>
           <Link
             href="/donate"
+            prefetch={false}
             onClick={() => setMenuOpen(false)}
             className="focus-ring mt-auto inline-flex items-center justify-center rounded-full bg-teal px-6 py-4 font-bold text-white"
           >
