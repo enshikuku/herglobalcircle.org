@@ -38,11 +38,11 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-forest/10 bg-white p-7 shadow-soft sm:p-10"
+      className="rounded-lg border border-forest/10 bg-white p-7 shadow-soft sm:p-10"
     >
       <div className="mb-8 flex items-center gap-3">
         <Mail className="h-6 w-6 text-teal" aria-hidden="true" />
-        <h2 className="text-2xl font-bold text-forest">Start a Conversation</h2>
+        <h2 className="text-2xl font-bold text-forest">Send a Message</h2>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
@@ -55,7 +55,7 @@ export function ContactForm() {
             name="name"
             type="text"
             autoComplete="name"
-            className="mt-2 w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-lg border border-forest/15 bg-paper px-4 py-3 text-ink"
           />
         </label>
         <label className="block">
@@ -67,7 +67,7 @@ export function ContactForm() {
             name="email"
             type="email"
             autoComplete="email"
-            className="mt-2 w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-lg border border-forest/15 bg-paper px-4 py-3 text-ink"
           />
         </label>
       </div>
@@ -80,7 +80,7 @@ export function ContactForm() {
           name="organization"
           type="text"
           autoComplete="organization"
-          className="mt-2 w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-ink"
+          className="mt-2 w-full rounded-lg border border-forest/15 bg-paper px-4 py-3 text-ink"
         />
       </label>
 
@@ -90,13 +90,13 @@ export function ContactForm() {
         </span>
         <select
           name="interest"
-          className="mt-2 w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-ink"
+          className="mt-2 w-full rounded-lg border border-forest/15 bg-paper px-4 py-3 text-ink"
         >
           <option>General Inquiry</option>
           <option>Partnership</option>
           <option>Mentorship</option>
           <option>Donation or Funding</option>
-          <option>H.E.R Enterprise Services</option>
+          <option>Events</option>
         </select>
       </label>
 
@@ -108,7 +108,7 @@ export function ContactForm() {
           required
           name="message"
           rows={5}
-          className="mt-2 w-full resize-y rounded-xl border border-forest/15 bg-paper px-4 py-3 text-ink"
+          className="mt-2 w-full resize-y rounded-lg border border-forest/15 bg-paper px-4 py-3 text-ink"
         />
       </label>
 
@@ -120,10 +120,10 @@ export function ContactForm() {
       </button>
       <p className="mt-4 text-xs leading-6 text-ink/55">
         This static website does not store your message. Submitting opens your
-        device’s email application so you remain in control of sending it.
+        device's email application so you remain in control of sending it.
       </p>
       {notice ? (
-        <p className="mt-3 rounded-xl bg-teal/10 p-3 text-sm leading-6 text-teal-700">
+        <p className="mt-3 rounded-lg bg-teal/10 p-3 text-sm leading-6 text-teal-700">
           {notice}
         </p>
       ) : null}
