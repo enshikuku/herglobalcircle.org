@@ -1,13 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Handshake, Mail, MapPin } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 
 const links = [
-  { label: "Who We Are", href: "/about" },
-  { label: "The H.E.R Pillars", href: "/programs" },
-  { label: "Mama Mumo Initiative", href: "/mama-mumo" },
-  { label: "H.E.R Enterprise", href: "/enterprise" },
-  { label: "Impact & Events", href: "/impact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Pillars", href: "/pillars" },
+  { label: "Events", href: "/events" },
+  { label: "Partners", href: "/partners" },
+  { label: "Donate", href: "/donate" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function SiteFooter() {
@@ -20,18 +22,10 @@ export function SiteFooter() {
             <Link
               href="/"
               prefetch={false}
-              className="focus-ring inline-flex items-center gap-4 rounded-full"
+              className="focus-ring inline-flex items-center gap-5 rounded-full"
               aria-label="H.E.R Global Circle home"
             >
-              <span className="rounded-full bg-white p-1.5">
-                <Image
-                  src="/branding/logo/logo.png"
-                  alt="H.E.R Global Circle"
-                  width={82}
-                  height={82}
-                  className="h-20 w-20 object-contain"
-                />
-              </span>
+              <BrandLogo size="footer" />
               <span className="text-sm leading-relaxed text-cream/80">
                 Hope. Elevate.
                 <br />
@@ -39,16 +33,16 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-7 text-cream/75">
-              A Pan-African foundation for empowerment, enterprise and
-              generational impact.
+              Mentorship, enterprise, wellness and opportunity for Africa's
+              next generation.
             </p>
           </div>
 
           <div>
             <h2 className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-gold">
-              Explore
+              Navigate
             </h2>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-3 text-sm">
               {links.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -65,10 +59,10 @@ export function SiteFooter() {
 
           <div>
             <h2 className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-gold">
-              Our Chapters
+              Active Chapters
             </h2>
             <ul className="space-y-4 text-sm text-cream/75">
-              {["Kenya (Headquarters)", "Uganda", "Ghana"].map((chapter) => (
+              {["Kenya", "Uganda", "Ghana"].map((chapter) => (
                 <li key={chapter} className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   {chapter}
@@ -81,6 +75,9 @@ export function SiteFooter() {
             <h2 className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-gold">
               Get in Touch
             </h2>
+            <p className="mb-5 text-sm leading-7 text-cream/75">
+              Partner, mentor, give or ask a question.
+            </p>
             <a
               href="mailto:info@herglobalcircle.org"
               className="focus-ring inline-flex items-start gap-3 rounded-sm text-sm text-cream/75 transition hover:text-white"
@@ -89,17 +86,18 @@ export function SiteFooter() {
               info@herglobalcircle.org
             </a>
             <Link
-              href="/donate"
+              href="/partners"
               prefetch={false}
-              className="focus-ring mt-7 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest transition hover:bg-white"
+              className="focus-ring mt-7 inline-flex items-center rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest transition hover:bg-white"
             >
-              Support Our Work
+              <Handshake className="mr-2 h-4 w-4" aria-hidden="true" />
+              Become a Partner
             </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 pt-7 text-xs text-cream/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} H.E.R Global Circle.</p>
+          <p>&copy; {new Date().getFullYear()} H.E.R Global Circle.</p>
           <p>Empowering Communities. Building Generational Impact.</p>
         </div>
       </div>
