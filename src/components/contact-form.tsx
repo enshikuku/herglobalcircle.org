@@ -11,20 +11,19 @@ export function ContactForm() {
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "");
     const email = String(form.get("email") || "");
-    const organization = String(form.get("organization") || "");
     const interest = String(form.get("interest") || "General inquiry");
     const message = String(form.get("message") || "");
 
     const subject = encodeURIComponent(
-      `H.E.R Global Circle enquiry: ${interest}`,
+      `Website enquiry from ${name || "H.E.R Global Circle visitor"}`,
     );
     const body = encodeURIComponent(
       [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Organization: ${organization || "Not provided"}`,
-        `Area of interest: ${interest}`,
+        `Interest: ${interest}`,
         "",
+        "Message:",
         message,
       ].join("\n"),
     );
@@ -120,7 +119,15 @@ export function ContactForm() {
       </button>
       <p className="mt-4 text-xs leading-6 text-ink/55">
         This static website does not store your message. Submitting opens your
-        device's email application so you remain in control of sending it.
+        device&apos;s email application so you remain in control of sending it.
+        You can also email{" "}
+        <a
+          href="mailto:info@herglobalcircle.org"
+          className="focus-ring rounded-sm font-bold text-teal hover:text-forest"
+        >
+          info@herglobalcircle.org
+        </a>
+        .
       </p>
       {notice ? (
         <p className="mt-3 rounded-lg bg-teal/10 p-3 text-sm leading-6 text-teal-700">
