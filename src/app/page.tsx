@@ -6,18 +6,16 @@ import {
   BriefcaseBusiness,
   CalendarDays,
   HandHeart,
-  Handshake,
   Heart,
   Leaf,
   Mail,
   MapPin,
 } from "lucide-react";
-import { BrandLogo } from "@/components/brand-logo";
 import {
-  communityVisualPlaceholders,
-  partnerPlaceholders,
+  sharonMumoInitiative,
   pillars,
   quarterlyEvents,
+  siteImages,
 } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -32,123 +30,85 @@ const pillarIcons = [Heart, BriefcaseBusiness, Leaf] as const;
 export default function HomePage() {
   return (
     <>
-      <section className="bg-forest text-white">
-        <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-16">
-          <div className="max-w-3xl">
-            <div className="mb-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-              <BrandLogo size="hero" />
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold">
-                  H.E.R Global Circle
-                </p>
-                <p className="display-script mt-1 text-4xl leading-none text-blush">
-                  Hope. Elevate. Resilience.
-                </p>
-              </div>
-            </div>
+      <section className="relative -mt-[6.25rem] h-[100svh] overflow-hidden bg-forest pt-[6.25rem] text-white lg:-mt-[7rem] lg:h-[100dvh] lg:pt-[7rem]">
+        <div className="mx-auto grid h-full max-w-7xl items-start gap-0 px-4 pb-3 sm:px-6 lg:items-center lg:grid-cols-[0.43fr_0.57fr] lg:gap-12 lg:px-8 lg:pb-8">
+          <div className="hidden lg:block" aria-hidden="true" />
 
-            <h1 className="text-balance text-5xl font-bold leading-[0.96] sm:text-6xl lg:text-7xl">
-              Empowering Communities.
-              <span className="mt-2 block text-blush">
-                Building Generational Impact.
-              </span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-cream/80 sm:text-xl">
-              Mentorship, enterprise, wellness and opportunity for Africa's
-              next generation.
-            </p>
+          <div className="relative z-10 flex min-h-0 flex-col justify-start pt-[34svh] sm:pt-[32svh] lg:justify-center lg:pt-10">
+            <div className="relative min-h-0">
+              <div className="absolute -left-4 top-10 h-24 w-24 border-l-4 border-t-4 border-teal" aria-hidden="true" />
+              <div className="absolute -right-4 bottom-16 h-28 w-28 border-b-4 border-r-4 border-gold" aria-hidden="true" />
+              <div className="relative h-[42svh] max-h-[44svh] min-h-0 overflow-hidden rounded-lg shadow-card ring-2 ring-teal/50 sm:h-[43svh] lg:h-[72dvh] lg:max-h-none lg:min-h-0">
+                <Image
+                  src={siteImages.communityCircle}
+                  alt="Community members gathered together"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 52vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-forest/25 to-transparent" />
 
-            <p className="mt-6 inline-flex items-center gap-2 border-y border-white/15 py-3 text-sm font-bold uppercase tracking-[0.16em] text-gold">
-              <MapPin className="h-4 w-4" aria-hidden="true" />
-              Active in Kenya &middot; Uganda &middot; Ghana
-            </p>
+                <div className="absolute inset-x-0 bottom-0 p-3 text-white sm:p-5 lg:p-8">
+                  <h1 className="max-w-3xl text-balance text-[clamp(1.45rem,7vw,2rem)] font-bold leading-[0.98] sm:text-4xl lg:text-6xl">
+                    Empowering Communities.
+                    <span className="mt-1 block text-blush lg:mt-2">
+                      Building Generational Impact.
+                    </span>
+                  </h1>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/pillars"
-                prefetch={false}
-                className="focus-ring inline-flex items-center rounded-full bg-gold px-7 py-4 font-bold text-forest shadow-soft transition hover:-translate-y-0.5 hover:bg-white"
-              >
-                Explore Our Pillars
-                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-              </Link>
-              <Link
-                href="/donate"
-                prefetch={false}
-                className="focus-ring inline-flex items-center rounded-full border border-white/25 px-7 py-4 font-bold text-white transition hover:bg-white/10"
-              >
-                <Heart className="mr-2 h-5 w-5" aria-hidden="true" />
-                Donate
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-blush sm:col-span-2">
-              <Image
-                src="/branding/images/image_3.png"
-                alt="Youth in a workshop setting"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 56vw"
-                className="object-cover object-center"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-blush">
-              <Image
-                src="/branding/images/image_1.png"
-                alt="Mentorship conversation"
-                fill
-                sizes="(max-width: 640px) 50vw, 28vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-blush">
-              <Image
-                src="/branding/images/image_2.png"
-                alt="Community celebration"
-                fill
-                sizes="(max-width: 640px) 50vw, 28vw"
-                className="object-cover"
-              />
-            </div>
-            {/* Replace these blocks with approved girls, youth and community photos when available. */}
-            <div className="grid gap-3 sm:col-span-2 sm:grid-cols-3">
-              {communityVisualPlaceholders.slice(0, 3).map((label) => (
-                <div
-                  key={label}
-                  className="min-h-24 rounded-lg border border-gold/25 bg-paper/95 p-4 shadow-soft"
-                >
-                  <p className="display-script break-words text-[1.65rem] leading-none text-teal">
-                    {label}
+                  <p className="mt-4 hidden text-sm font-bold uppercase tracking-[0.16em] text-cream md:block lg:text-base">
+                    Mentorship &middot; Enterprise &middot; Wellness &middot; Opportunity
                   </p>
-                  <span className="mt-4 block h-px w-10 bg-gold" />
                 </div>
-              ))}
+
+                <div className="absolute right-4 top-4 hidden max-w-44 bg-black/80 px-3 py-2 text-white sm:max-w-56 sm:px-4 sm:py-3 md:block">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+                    Community
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-white/90 sm:text-sm sm:leading-6">
+                    Girls, youth and women rising together.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:px-8">
-          <div>
-            <p className="display-script text-5xl leading-none text-teal sm:text-6xl">
-              Rooted in Africa.
+      <section className="bg-blush/55 py-14 sm:py-18">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
+          <div className="max-w-3xl">
+            <p className="section-kicker">Active Chapters</p>
+            <p className="mt-3 inline-flex items-center gap-2 border-y border-gold/25 py-3 text-sm font-bold uppercase tracking-[0.16em] text-forest">
+              <MapPin className="h-4 w-4 text-teal" aria-hidden="true" />
+              Active in Kenya &middot; Uganda &middot; Ghana
             </p>
-            <h2 className="mt-2 text-4xl font-bold leading-tight text-forest sm:text-5xl">
-              Globally Connected.
-            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
+              Mentorship, enterprise, wellness and opportunity for Africa&apos;s
+              next generation. Pillars and H.E.R Enterprise are under About Us.
+            </p>
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-teal sm:hidden">
+              Mentorship &middot; Enterprise &middot; Wellness &middot; Opportunity
+            </p>
           </div>
-          <div className="max-w-2xl text-lg leading-8 text-ink/70 lg:justify-self-end">
-            <p>
-              H.E.R Global Circle creates space for girls, youth and women to
-              rise.
-            </p>
-            <p className="mt-4">
-              Built across Kenya, Uganda and Ghana with mentorship, enterprise
-              and wellness at the centre.
-            </p>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
+            <Link
+              href="/about/"
+              prefetch={false}
+              className="focus-ring inline-flex items-center rounded-full bg-gold px-7 py-4 font-bold text-forest shadow-soft transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Explore Our Pillars
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/donate/"
+              prefetch={false}
+              className="focus-ring inline-flex items-center rounded-full border border-forest/15 bg-white px-7 py-4 font-bold text-forest transition hover:bg-forest hover:text-white"
+            >
+              <Heart className="mr-2 h-5 w-5" aria-hidden="true" />
+              Donate
+            </Link>
           </div>
         </div>
       </section>
@@ -163,7 +123,7 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              href="/pillars"
+              href="/about/"
               prefetch={false}
               className="focus-ring inline-flex items-center rounded-full bg-forest px-6 py-3 font-bold text-white transition hover:bg-teal"
             >
@@ -182,7 +142,7 @@ export default function HomePage() {
                 Mentorship, learning and wellness in one simple structure.
               </p>
               <Link
-                href="/pillars"
+                href="/about/"
                 prefetch={false}
                 className="focus-ring mt-7 inline-flex items-center rounded-full bg-gold px-6 py-3 font-bold text-forest transition hover:bg-white"
               >
@@ -192,78 +152,114 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-4">
-            {pillars.map((pillar, index) => {
-              const Icon = pillarIcons[index];
-              return (
-                <article
-                  key={pillar.title}
-                  className={`grid gap-4 rounded-lg border border-forest/10 p-5 sm:grid-cols-[4.5rem_1fr] ${
-                    index === 0
-                      ? "bg-paper"
-                      : index === 1
-                        ? "bg-blush/35"
-                        : "bg-white"
-                  }`}
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blush ring-1 ring-gold/40">
-                    <Icon className="h-7 w-7 text-teal" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal">
-                      {pillar.letter} - {pillar.subtitle}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-bold text-forest">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-2 max-w-2xl text-sm leading-7 text-ink/70">
-                      {pillar.description}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {pillar.focus.slice(0, 3).map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-gold/25 bg-white px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-forest/70"
-                        >
-                          {item}
-                        </span>
-                      ))}
+              {pillars.map((pillar, index) => {
+                const Icon = pillarIcons[index];
+                return (
+                  <article
+                    key={pillar.title}
+                    className={`grid gap-4 rounded-lg border p-5 shadow-soft sm:grid-cols-[4.5rem_1fr] ${
+                      index === 0
+                        ? "border-teal/25 bg-paper"
+                        : index === 1
+                          ? "border-gold/30 bg-teal/10"
+                          : "border-blush/60 bg-forest text-white"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-16 w-16 items-center justify-center rounded-full ring-1 ${
+                        index === 0
+                          ? "bg-blush ring-teal/35"
+                          : index === 1
+                            ? "bg-paper ring-gold/40"
+                            : "bg-blush ring-gold/30"
+                      }`}
+                    >
+                      <Icon
+                        className={`h-7 w-7 ${
+                          index === 2 ? "text-forest" : "text-teal"
+                        }`}
+                        aria-hidden="true"
+                      />
                     </div>
-                  </div>
-                </article>
-              );
-            })}
+                    <div>
+                      <p
+                        className={`text-xs font-bold uppercase tracking-[0.16em] ${
+                          index === 2 ? "text-gold" : "text-teal"
+                        }`}
+                      >
+                        {pillar.letter} - {pillar.subtitle}
+                      </p>
+                      <h3
+                        className={`mt-2 text-2xl font-bold ${
+                          index === 2 ? "text-white" : "text-forest"
+                        }`}
+                      >
+                        {pillar.title}
+                      </h3>
+                      <p
+                        className={`mt-2 max-w-2xl text-sm leading-7 ${
+                          index === 2 ? "text-cream/80" : "text-ink/70"
+                        }`}
+                      >
+                        {pillar.description}
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {pillar.focus.slice(0, 3).map((item) => (
+                          <span
+                            key={item}
+                            className={`rounded-full border px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] ${
+                              index === 2
+                                ? "border-white/20 bg-white/10 text-white"
+                                : index === 1
+                                  ? "border-gold/30 bg-white px-3 py-1 text-forest"
+                                  : "border-teal/20 bg-white text-forest/70"
+                            }`}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-paper py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-card ring-1 ring-teal/30">
             <Image
-              src="/branding/images/image_2.png"
+              src={siteImages.childrenYouth}
               alt="Community members gathered in a joyful moment"
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
               className="object-cover"
             />
+            <div className="absolute left-4 top-4 rounded-full bg-black px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white">
+              Sharon Mumo
+            </div>
           </div>
           <div>
             <p className="section-kicker">Featured Initiative</p>
             <h2 className="mt-5 text-4xl font-bold leading-tight text-forest sm:text-5xl">
-              Mama Mumo Initiative
+              {sharonMumoInitiative.title}
             </h2>
-            <p className="mt-6 text-lg leading-8 text-ink/70">
-              Humanitarian care for children, young people and families,
-              offered with dignity and respect.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/70">
+              {sharonMumoInitiative.description}
             </p>
+            <div className="mt-6 inline-flex rounded-full border border-teal/20 bg-teal/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-forest">
+              Support with dignity
+            </div>
             <Link
-              href="/donate"
+              href={sharonMumoInitiative.route}
               prefetch={false}
               className="focus-ring mt-8 inline-flex items-center rounded-full bg-teal px-7 py-4 font-bold text-white transition hover:bg-teal-700"
             >
               <HandHeart className="mr-2 h-5 w-5" aria-hidden="true" />
-              Support the Initiative
+              Visit the Initiative
             </Link>
           </div>
         </div>
@@ -280,7 +276,7 @@ export default function HomePage() {
               <p className="mt-4 text-cream/75">Events are updated quarterly.</p>
             </div>
             <Link
-              href="/events"
+              href="/events/"
               prefetch={false}
               className="focus-ring inline-flex items-center rounded-full bg-gold px-6 py-3 font-bold text-forest transition hover:bg-white"
             >
@@ -309,53 +305,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-blush/55 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
-            <div>
-              <p className="section-kicker">Partners</p>
-              <h2 className="mt-4 text-4xl font-bold leading-tight text-forest sm:text-5xl">
-                Partners in Generational Impact
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-ink/70">
-                We work with corporate, government, development, community and
-                ecosystem partners to expand opportunity across Africa.
-              </p>
-              <Link
-                href="/partners"
-                prefetch={false}
-                className="focus-ring mt-8 inline-flex items-center rounded-full bg-forest px-7 py-4 font-bold text-white transition hover:bg-teal"
-              >
-                <Handshake className="mr-2 h-5 w-5" aria-hidden="true" />
-                Become a Partner
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {partnerPlaceholders.map((partner) => (
-                <div
-                  key={partner}
-                  className="flex min-h-28 items-center justify-center rounded-lg border border-gold/25 bg-paper px-4 text-center shadow-soft"
-                >
-                  <span className="text-sm font-bold uppercase tracking-[0.14em] text-forest">
-                    {partner}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-paper py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-lg bg-teal p-8 text-white sm:p-10">
+          <div className="rounded-lg bg-teal p-8 text-white shadow-card sm:p-10">
             <Heart className="h-8 w-8 text-gold" aria-hidden="true" />
             <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Donate</h2>
             <p className="mt-4 max-w-xl text-lg leading-8 text-white/80">
               Support programs that move hope into action.
             </p>
             <Link
-              href="/donate"
+              href="/donate/"
               prefetch={false}
               className="focus-ring mt-7 inline-flex items-center rounded-full bg-white px-7 py-4 font-bold text-teal transition hover:bg-gold hover:text-forest"
             >
@@ -364,7 +323,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="rounded-lg border border-forest/10 bg-paper p-8 sm:p-10">
+          <div className="rounded-lg border border-teal/20 bg-white p-8 shadow-soft sm:p-10">
             <Mail className="h-8 w-8 text-gold" aria-hidden="true" />
             <h2 className="mt-5 text-3xl font-bold text-forest sm:text-4xl">
               Contact
@@ -380,7 +339,7 @@ export default function HomePage() {
               or send a short message.
             </p>
             <Link
-              href="/contact"
+              href="/contact/"
               prefetch={false}
               className="focus-ring mt-7 inline-flex items-center rounded-full bg-forest px-7 py-4 font-bold text-white transition hover:bg-teal"
             >
