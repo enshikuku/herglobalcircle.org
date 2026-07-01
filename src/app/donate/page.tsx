@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Heart, LockKeyhole, ShieldCheck } from "lucide-react";
 import { PageIntro } from "@/components/page-intro";
 import { donationCategories } from "@/lib/donations";
+import { siteImages } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Donate",
   description:
     "Support H.E.R Global Circle mentorship, education, enterprise, wellness and resilience programs.",
-  alternates: { canonical: "/donate" },
+  alternates: { canonical: "/donate/" },
 };
 
 export default function DonatePage() {
@@ -16,18 +18,40 @@ export default function DonatePage() {
     <>
       <section className="texture-paper py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Heart className="mx-auto h-9 w-9 text-gold" aria-hidden="true" />
-          <div className="mt-5">
-            <PageIntro
-              eyebrow="Donate"
-              title="Support programs that move hope into action."
-              description="Choose a giving area. Live payment links will be added only after verification."
-            />
-          </div>
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <Heart className="h-9 w-9 text-gold" aria-hidden="true" />
+              <div className="mt-5">
+                <PageIntro
+                  align="left"
+                  eyebrow="Donate"
+                  title="Support programs that move hope into action."
+                  description="Choose a giving area. Live payment links will be added only after verification."
+                />
+              </div>
 
-          <div className="mx-auto mt-10 max-w-3xl rounded-lg border border-gold/25 bg-gold/10 p-5 text-center text-sm font-bold text-forest">
-            Donation links will be connected to verified payment channels
-            before launch.
+              <div className="mt-8 rounded-lg border border-teal/20 bg-paper p-5 text-sm font-bold text-black shadow-soft">
+                Donation links will connect to verified payment channels only.
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-card ring-1 ring-teal/25">
+              <Image
+                src={siteImages.childrenYouth}
+                alt="Children and youth receiving community support"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-black/70 px-4 py-4 text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">
+                  Giving
+                </p>
+                <p className="mt-1 text-sm leading-6 text-white/90">
+                  Support programs with care and clarity.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -84,7 +108,7 @@ export default function DonatePage() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact/"
             prefetch={false}
             className="focus-ring rounded-full border border-white/20 px-6 py-3 text-center font-bold text-white transition hover:bg-white/10"
           >
