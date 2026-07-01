@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { PageIntro } from "@/components/page-intro";
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact H.E.R Global Circle to partner, mentor, give or learn more.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {
@@ -51,14 +50,13 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Link
-            href="/partners"
-            prefetch={false}
+          <a
+            href="mailto:info@herglobalcircle.org?subject=Partnership%20Enquiry"
             className="focus-ring mt-8 inline-flex items-center rounded-full bg-forest px-7 py-4 font-bold text-white transition hover:bg-teal"
           >
             Become a Partner
             <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-          </Link>
+          </a>
         </div>
 
         <ContactForm />
