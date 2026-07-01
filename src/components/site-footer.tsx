@@ -1,16 +1,7 @@
 import Link from "next/link";
 import { Handshake, Mail, MapPin } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
-
-const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Pillars", href: "/pillars" },
-  { label: "Events", href: "/events" },
-  { label: "Partners", href: "/partners" },
-  { label: "Donate", href: "/donate" },
-  { label: "Contact", href: "/contact" },
-];
+import { mainNavigation } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
@@ -33,7 +24,7 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-7 text-cream/75">
-              Mentorship, enterprise, wellness and opportunity for Africa's
+              Mentorship, enterprise, wellness and opportunity for Africa&apos;s
               next generation.
             </p>
           </div>
@@ -43,7 +34,7 @@ export function SiteFooter() {
               Navigate
             </h2>
             <ul className="grid grid-cols-2 gap-3 text-sm">
-              {links.map((link) => (
+              {mainNavigation.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -86,7 +77,7 @@ export function SiteFooter() {
               info@herglobalcircle.org
             </a>
             <Link
-              href="/partners"
+              href="/contact/"
               prefetch={false}
               className="focus-ring mt-7 inline-flex items-center rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest transition hover:bg-white"
             >
@@ -96,7 +87,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-7 text-xs text-cream/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-7 flex flex-col gap-3 border-t border-white/10 bg-black px-4 py-4 text-xs text-cream/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} H.E.R Global Circle.</p>
           <p>Empowering Communities. Building Generational Impact.</p>
         </div>
