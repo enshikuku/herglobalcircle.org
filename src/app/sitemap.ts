@@ -4,16 +4,11 @@ export const dynamic = "force-static";
 
 const routes = [
   "",
-  "/about",
-  "/pillars",
-  "/events",
-  "/partners",
-  "/programs",
-  "/mama-mumo",
-  "/enterprise",
-  "/impact",
-  "/donate",
-  "/contact",
+  "/about/",
+  "/events/",
+  "/donate/",
+  "/contact/",
+  "/sharon-mumo-initiative/",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
