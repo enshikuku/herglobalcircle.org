@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/clean-next-dev-types.mjs && next build",
     "start": "serve out",
     "lint": "eslint ."
   },
