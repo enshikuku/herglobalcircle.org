@@ -49,7 +49,7 @@ export function DonationReceived({ category }: DonationReceivedProps) {
             Back to Home
           </Link>
           <Link
-            href="/contact"
+            href="/contact/"
             prefetch={false}
             className="focus-ring rounded-full border border-forest/20 bg-white px-7 py-4 font-bold text-forest transition hover:border-forest"
           >
