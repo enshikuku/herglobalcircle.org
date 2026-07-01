@@ -82,6 +82,30 @@ This includes:
 
 Do not rename or delete these files without updating every reference. See [BRAND_GUIDE.md](./BRAND_GUIDE.md) for implementation rules.
 
+## Site structure
+
+Main navigation is:
+
+- Home
+- About Us
+- Events
+- Donate
+- Contact
+
+Pillars now live under `About Us` at `/about/`. H.E.R Global Circle Community and H.E.R Enterprise also appear under About Us, and the humanitarian initiative page is now:
+
+```text
+/sharon-mumo-initiative/
+```
+
+Partners are not shown in the top navigation. Partnership calls to action remain in footer and contact areas.
+
+Internal navigation should use exported folder routes such as `/about/`, `/events/`, `/donate/`, `/contact/` and `/sharon-mumo-initiative/`. Do not use hash anchors; the pillars are visible directly on the About Us page.
+
+Legacy routes such as `/pillars/`, `/partners/`, `/programs/`, `/impact/`, `/enterprise/`, `/mama-mumo/` and `/mama-mumo-initiative/` are kept only as simple static pointer pages so old visits do not break.
+
+Use the brand palette for visible UI surfaces: teal, deep green, blush, gold, black, white, warm paper and cream. Do not use grey UI blocks or grey Tailwind color families.
+
 ## Donation setup
 
 The site does not currently collect or process payments. Donation categories and Paystack placeholders are maintained in:
@@ -108,23 +132,23 @@ When a live Paystack payment page is available:
 
 | Donation category | Success redirect path |
 | --- | --- |
-| General Foundation Support | `/donation-received/general-foundation-support` |
-| Mama Mumo Initiative | `/donation-received/mama-mumo-initiative` |
-| Mentorship & Youth Empowerment | `/donation-received/mentorship-youth-empowerment` |
-| Education Support | `/donation-received/education-support` |
-| Women & Youth Enterprise Support | `/donation-received/women-youth-enterprise-support` |
-| Wellness & Resilience Programs | `/donation-received/wellness-resilience-programs` |
+| General Foundation Support | `/donation-received/general-foundation-support/` |
+| The Sharon Mumo Initiative | `/donation-received/sharon-mumo-initiative/` |
+| Mentorship & Youth Empowerment | `/donation-received/mentorship-youth-empowerment/` |
+| Education Support | `/donation-received/education-support/` |
+| Women & Youth Enterprise Support | `/donation-received/women-youth-enterprise-support/` |
+| Wellness & Resilience Programs | `/donation-received/wellness-resilience-programs/` |
 
 The generic fallback page is:
 
 ```text
-/donation-received
+/donation-received/
 ```
 
 For production Paystack settings, use the full HTTPS URL, for example:
 
 ```text
-https://herglobalcircle.org/donation-received/general-foundation-support
+https://herglobalcircle.org/donation-received/general-foundation-support/
 ```
 
 These pages deliberately state that the donation process was received and that confirmation is handled by the donation platform. They do not independently claim that money was received.
