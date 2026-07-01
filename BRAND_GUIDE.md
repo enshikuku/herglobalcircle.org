@@ -55,7 +55,7 @@ Usage rules:
 - Preserve the full circular structure, H.E.R lettering, Global Circle name and supporting tagline.
 - Maintain the original aspect ratio.
 - Place the logo on quiet backgrounds with enough contrast.
-- On dark green surfaces, use a white or very light neutral holding shape behind the supplied transparent logo when necessary for clarity.
+- On dark green surfaces, use a white or very light cream holding shape behind the supplied transparent logo when necessary for clarity.
 - Keep clear space around the logo. As a practical minimum, use space equal to roughly 10% of the displayed logo width.
 - Do not stretch, crop, rotate, add effects to or place text over the logo.
 - Use the supplied favicon files for compact browser and device contexts rather than shrinking the full logo beyond legibility.
@@ -71,13 +71,14 @@ Usage rules:
 | Black | `#000000` | High-contrast fallback and approved logo detail |
 | White | `#FFFFFF` | Clean surfaces, reversed text and breathing space |
 
-The implemented website also uses a warm paper neutral (`#FFFAF7`) and cream (`#F8F1E8`) as supporting backgrounds. These should remain subordinate to the official palette.
+The implemented website also uses warm paper (`#FFFAF7`) and cream (`#F8F1E8`) as supporting backgrounds. These should remain subordinate to the official palette.
 
 Color rules:
 
 - Deep green and teal carry authority and action.
 - Blush adds warmth but should not reduce text contrast.
 - Gold is an accent, not a large default body-text color.
+- Avoid visible grey UI because it is not part of the brand palette. Use blush, cream, white, deep green, teal, gold or black instead.
 - Avoid unrelated gradients and colors that compete with the identity.
 - Maintain WCAG-readable contrast for text and interactive controls.
 
@@ -198,6 +199,7 @@ Button copy should be specific. Prefer “Support Our Work” or “Start a Conv
 - Alternate section rhythm: image-led, editorial text, impact figures and call-to-action sections.
 - Do not place several dense card grids back to back.
 - Keep navigation labels stable across desktop, mobile and footer contexts.
+- Keep Pillars, H.E.R Global Circle Community and H.E.R Enterprise visible under About Us.
 - Ensure no horizontal overflow at 320px viewport width.
 - Static routes must remain compatible with Next.js export and cPanel directory hosting.
 
